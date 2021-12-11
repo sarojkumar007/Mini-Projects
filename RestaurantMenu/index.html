@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Restaurant Menu</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Flow+Rounded&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sarojkumar007/m-icons/dist/m-icons-round.min.css">
+
+	<link rel="stylesheet" href="style.css">
+</head>
+<body class="">
+	<button class="toggleTheme center_v" title="Switch to Dark Theme">
+		<i class="m-icon-round">light_mode</i>
+	</button>
+	<header>
+		<div class="title center">
+			<i class="m-icon-round">restaurant</i>
+			<span>M's Kitchen</span>
+		</div>
+		<nav class="nav center">
+			<ul class="nav_links center_v">
+				<li class="nav_link home"><a href="" class="center_v">
+					<i class="m-icon-round">house</i>
+					<span>Home</span>
+				</a></li>
+				<li class="nav_link order"><a href="#!" class="center_v">
+					<i class="m-icon-round">delivery_dining</i>
+					<span>Orders</span>
+				</a></li>
+				<li class="nav_link surprise"><a href="#!" class="center_v" data-trigger="#cart">
+					<i class="m-icon-round">shopping_cart</i>
+					<span>Cart (<span id="cartItemNo">0</span>)</span>
+				</a></li>
+				<li class="nav_link help"><a href="#!" class="center_v" data-trigger="#query">
+					<i class="m-icon-round">help_outline</i>
+					<span>Help</span>
+				</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main class="menu">
+	</main>
+	<footer class="center">
+		<span>&copy; Copyrights - 2021 &bull; M's Kitchen</span>
+	</footer>
+
+	<div class="modal" id="cart">
+		<div class="modal-close" data-close>✖</div>
+		<div class="modal-body">
+			<div class="cart_head center_v">
+				<h3 style="text-align: center;margin-bottom: 1rem;">Items in your Cart</h3>
+				<button class="clearCartBtn center_v">
+					<i class="m-icon-round">clear_all</i>
+					<span>Clear Cart</span>
+				</button>
+			</div>
+			<div class="cart_items">
+				<div class="empty_box">
+					<i class="m-icon-round">add_shopping_cart</i>
+					<h5>Add Items to bring them to cart</h5>
+				</div>
+			</div>
+			<div class="total_wrap">
+				<div class="cartTotal"></div>
+			</div>
+		</div>
+	</div>
+	<div class="modal" id="query">
+		<div class="modal-close" data-close>✖</div>
+		<div class="modal-body center">
+			Thanks for your patience.
+			<br>
+			We'll get back to you soon.
+		</div>
+	</div>
+	<div class="modal-overlay"></div>
+
+	<script src="main.js"></script>
+</body>
+</html>
