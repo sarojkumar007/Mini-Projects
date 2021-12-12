@@ -1,0 +1,23 @@
+{
+  "name": "Mini-Projects",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center \">Mini-Projects</h1>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarojkumar007/Mini-Projects.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarojkumar007/Mini-Projects/issues"
+  },
+  "homepage": "https://github.com/sarojkumar007/Mini-Projects#readme",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}
