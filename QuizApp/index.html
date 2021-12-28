@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="http://placehold.jp/32x32.png" type="image/png">
+	<title>Quiz App</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sarojkumar007/m-icons/dist/m-icons-round.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	
+	<header>
+		<div class="title">
+			<i class="m-icon-round">quiz</i>
+			General Knowledge Test
+		</div>
+	</header>
+	<main>
+		<div class="testInfo">
+			<div class="iconDisplay">
+				<i class="m-icon-round">fact_check</i>
+				<span class="head">Total Questions:</span>
+				<span class="info" id="totalQ"></span>
+			</div>
+			<div class="iconDisplay">
+				<i class="m-icon-round hourGlassAnimation">hourglass_empty</i>
+				<span class="head">Time Left:</span>
+				<span class="info" id="timer">00:00</span>
+			</div>
+		</div>
+		<div class="examArea">
+			<div class="page page1 center current">
+				<div class="center">
+					<button class="btn startBtn">Start Exam</button>
+				</div>
+			</div>
+			<div class="page page2">
+				<form action="#!" id="examForm" method="POST">
+					<div class="qusn_wrap"></div>
+				</form>
+			</div>
+			<div class="page page3 center">
+				<div class="">
+					<div class="resultArea error">
+						<span class="center res_icon">
+							<i class="m-icon-round s-i">military_tech</i>
+							<i class="m-icon-round e-i">assignment_late</i>
+						</span>
+
+						<p>You got <span id="score"></span></p>
+
+						<p class="res_info"></p>
+
+						<div class="divider"></div>
+
+						<div class="examResult">
+							<div class="iDisplay">
+								<i class="m-icon-round">checklist</i>
+								<span class="iDisplayHead">Correct Questions:</span>
+								<span class="iDisplayText" id="examResult_correctQ">04</span>
+							</div>
+							<div class="iDisplay">
+								<i class="m-icon-round">note_alt</i>
+								<span class="iDisplayHead">Questions Attended:</span>
+								<span class="iDisplayText" id="examResult_attended">08</span>
+							</div>
+							<div class="iDisplay">
+								<i class="m-icon-round">fact_check</i>
+								<span class="iDisplayHead">Total Questions:</span>
+								<span class="iDisplayText" id="examResult_totalQ">09</span>
+							</div>
+						</div>
+
+						<div class="center cta">
+							<button class="btn iconBtn retakeBtn">
+								<i class="m-icon-round">restart_alt</i>
+								<span>Take Test Again !</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<script src="js/main.js"></script>
+</body>
+</html>

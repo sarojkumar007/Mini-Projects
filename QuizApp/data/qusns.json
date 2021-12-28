@@ -1,0 +1,83 @@
+[
+	{
+		"question": "How much centimeter is 1 meter?",
+		"opt1": "15.6cm",
+		"opt2": "100cm",
+		"opt3": "1000cm",
+		"opt4": "50cm",
+		"ans": 2,
+		"time":10
+	},
+	{
+		"question": "What sound does a cat make?",
+		"opt1": "Meow Meow",
+		"opt2": "Bhaw Bhaw",
+		"opt3": "Quack Quack",
+		"opt4": "Kaw Kaw",
+		"ans": 1,
+		"time":10
+	},
+	{
+		"question": "Which city has Taj Mahal?",
+		"opt1": "Mumbai",
+		"opt2": "Chennai",
+		"opt3": "Puri",
+		"opt4": "Agra",
+		"ans": 4,
+		"time":10
+	},
+	{
+		"question": "Which is the hottest planet in our solar system?",
+		"opt1": "Earth",
+		"opt2": "Venus",
+		"opt3": "Mercury",
+		"opt4": "Saturn",
+		"ans": 2,
+		"time":10
+	},
+	{
+		"question": "Who among the following were contemporaries of Kanishka?",
+		"opt1": "Kamban, Banabhatta, Asvagosha",
+		"opt2": "Nagarjuna, Asvagosha, Vasumitra",
+		"opt3": "Asvagosha, Kalidasa, Banabhatta",
+		"opt4": "Kalidasa, Kamban, Vasumitra",
+		"ans": 2,
+		"time": 10
+	},
+	{
+		"question": "Which rulers built the Ellora temples?",
+		"opt1": "Chalukya",
+		"opt2": "Sunga",
+		"opt3": "Rashtrakuta",
+		"opt4": "Pallava",
+		"ans": 3,
+		"time": 10
+	},
+	{
+		"question": "Which among the following is <em>not</em> a work of Rabindranath Tagore?",
+		"opt1": "Chitra",
+		"opt2": "Kapala Kundala",
+		"opt3": "The Court Dancer",
+		"opt4": "Chithrangada",
+		"ans": 2,
+		"time": 10
+	},
+	{
+		"question": "Who wrote the play “Uttararamacharita”?",
+		"opt1": "Harsha",
+		"opt2": "Tulsidas",
+		"opt3": "Bhavabhuti",
+		"opt4": "Sudraka",
+		"ans": 3,
+		"time": 10
+	},
+	{
+		"question": "Who is the author of the Harry Potter Book Series?",
+		"opt1": "Charles Dickens",
+		"opt2": "Nick Middleton",
+		"opt3": "J.K. Rowling",
+		"opt4": "Edward Klein",
+		"ans": 3,
+		"time": 10
+	}
+]
