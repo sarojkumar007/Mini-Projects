@@ -54,13 +54,13 @@ const startGame = type => {
 			break;
 		case 1:
 			i_count = 16;
-			root.style.setProperty('--gameTime', '40s');
-			gameTime = 40
+			root.style.setProperty('--gameTime', '30s');
+			gameTime = 30
 			break;
 		case 2:
 			i_count = 20;
-			root.style.setProperty('--gameTime', '60s');
-			gameTime = 60
+			root.style.setProperty('--gameTime', '40s');
+			gameTime = 40
 			break;
 		default:
 			i_count = 12
