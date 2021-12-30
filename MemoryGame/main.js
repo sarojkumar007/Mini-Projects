@@ -101,7 +101,7 @@ const startGame = type => {
 		</div>`;
 	}
 	const types = [0, 1, 2];
-	types.splice(t.indexOf(type), 1)
+	types.splice(types.indexOf(type), 1)
 	types.forEach(t => { input_wrap.classList.remove(`i_${t}`) })
 	input_wrap.classList.add(`i_${type}`);
 	input_wrap.innerHTML = iHTML;
