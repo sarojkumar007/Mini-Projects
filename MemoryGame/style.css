@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
 @keyframes fadeIn{
 	0%{
@@ -19,6 +19,7 @@
 
 :root{
 	--font: 'Poppins',sans-serif;
+	--fw-l: 300;
 	--fw: 500;
 	--fw-b: 700;
 
@@ -109,7 +110,9 @@ body{
 	display: flex !important;
 	animation: fadeIn .5s backwards ease-out;
 }
-
+.page1{
+	position: relative;
+}
 .wrapper{
 	padding: 1rem;
 	text-align: center;
@@ -240,7 +243,6 @@ body{
 	height: 100%;
 	padding: 2rem;
 	border-radius: 6px;
-	text-align: center;
 	perspective: var(--perspective);
 	transform: rotateX(180deg);
 	-webkit-backface-visibility: hidden;
@@ -333,4 +335,27 @@ body{
 }
 .input_icon{
 	font-size: 3rem;
+}
+
+/* Footer */
+.footer{
+	margin-top: 4rem;
+	color: #bbb;
+	font-size: 1.2rem;
+	letter-spacing: 1px;
+	font-weight: var(--fw-l);
+}
+.footer_text i{
+	color: #f33;
+}
+.footer_text a{
+	outline: none;
+	text-decoration: none;
+	display: inline-block;
+	color: #777;
+	font-weight: var(--fw);
+}
+.footer_text a:hover{
+	color: var(--c-2);
+	border-bottom: 1px solid currentColor;
 }
