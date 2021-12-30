@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+@keyframes fadeIn{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+@keyframes progress{
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: 100%;
+	}
+}
+
+:root{
+	--font: 'Poppins',sans-serif;
+	--fw: 500;
+	--fw-b: 700;
+
+	--c-1: #66bb6a;
+	--c-2: #00c853;
+	--g-1: #ffff00;
+	--g-2: #ffab00;
+
+	--gameTime: 3s;
+}
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html{
+	font-size: 62.5%;
+}
+body{
+	font-size: 1.5rem;
+	font-family: var(--font);
+	font-weight: var(--fw);
+
+	min-width: 100vh;
+	padding: 2rem;
+	background-image: linear-gradient(to bottom right, var(--c-1), var(--c-2));
+}
+/*Helper Classes*/
+.center{
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+}
+.center_v{
+	display: flex !important;
+	align-items: center;
+}
+/* --------------- */
+
+.header{
+	padding: 1.5rem;
+	height: 8rem;
+	background-color: #fff;
+	border-top-right-radius: 6px;
+	border-top-left-radius: 6px;
+}
+.title{
+	width: 100%;
+	height: 5rem;
+	padding: 1rem;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-shadow: 1px 3px 3px rgba(222,222,222,.5);
+}
+.title i{
+	margin-right: .5rem;
+}
+.t{
+	font-weight: var(--fw-b);
+	font-size: 1.8rem;
+	background: #666 radial-gradient(var(--g-1), var(--g-2));
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	position: relative;
+}
+#lvl{
+	position: absolute;
+	bottom: -8px;
+	right: -8px;
+	font-size: 1rem;
+	color: #555;
+}
+.main{
+	min-height: 48rem;
+	height: calc(100vh - 12rem);
+	background-color: #fff;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+.page{
+	padding: 1.5rem;
+	height: 100%;
+	display: none !important;
+}
+.page.current{
+	display: flex !important;
+	animation: fadeIn .5s backwards ease-out;
+}
+
+.wrapper{
+	padding: 1rem;
+	text-align: center;
+}
+.heading{
+	font-size: 4.2rem;
+	margin: 1rem 0;
+}
+.text{
+	font-size: 1.6rem;
+	color: #999;
+}
+.cta1{
+	margin-top: 3rem;
+}
+.cta_wrap{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.cta_wrap p{
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 1.3rem;
+}
+.levelGroup{
+	margin: 2rem 0;
+}
+.levelGroup input{
+	display: none;
+}
+.levelGroup label{
+	display: flex;
+	align-items: center;
+	padding: .75rem 2rem;
+	margin: 0 1rem;
+	border: 2px solid #eee;
+	border-radius: 10rem;
+	letter-spacing: 1px;
+	cursor: pointer;
+	user-select: none;
+	transition: border-color 300ms;
+}
+.levelGroup label i{
+	margin-right: 1rem;
+}
+.levelGroup input:checked + label{
+	border-color: var(--c-1);
+	color: var(--c-2);
+}
+.btn{
+	border: none;
+	outline: none;
+	padding: 1.2rem 1.8rem;
+	background-color: #eee;
+	border-radius: 6px;
+	font-family: inherit;
+	font-weight: var(--fw);
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	letter-spacing: 1px;
+	transition: transform 300ms;
+}
+.btn:active{
+	transform: translateY(3px);
+}
+.startBtn{
+	background-color: var(--g-2);
+	color: #fff;
+}
+.startBtn i{
+	margin-right: 1rem;
+	transition: transform 500ms;
+}
+.startBtn:hover i{
+	transform: translateX(.5rem);
+}
+.startBtn[disabled]{
+	background-color: rgba(255,171,0,.5);
+	cursor: not-allowed;
+}
+.startBtn[disabled]:hover i,
+.startBtn[disabled]:active{
+	transform: none;
+}
+
+/* Page2 Styling */
+.page2{
+	position: relative;
+}
+.timeBarWrapper{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	padding: 0 1.5rem;
+}
+.timeBar{
+	width: 0%;
+	height: 100%;
+	background-color: var(--g-2);
+}
+.timeBar.active{
+	animation: progress var(--gameTime,0s) forwards linear;
+}
+
+/* Main */
+.gameArea{
+	width: 75%;
+	height: 75%;
+	position: relative;
+}
+.gameArea.active .resultArea{
+	transform: rotateX(0);
+}
+.gameArea.active .input_wrap{
+	transform: rotateX(-180deg);
+}
+.resultArea{
+	position: absolute;
+	top: 0;
+	left: 0;
+	flex-direction: column;
+
+	width: 100%;
+	height: 100%;
+	padding: 2rem;
+	border-radius: 6px;
+	perspective: var(--perspective);
+	transform: rotateX(180deg);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: transform var(--transition,300ms);
+}
+.resultArea .heading{ color: #fff; }
+.resultArea .cta{ margin-top: 2rem; }
+.retryBtn{ background-color: #fff;color: #212121; }
+.retryBtn i{ margin-right: 1rem; }
+
+.resultArea.success { background-color: var(--c-2); }
+.resultArea.error{ background-color: #ef5350; }
+/* Game CSS */
+.input_wrap{
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	display: grid;
+	grid-gap: 1rem;
+	background-color: #f5f5f5;
+	padding: 2rem;
+	border-radius: 6px;
+	width: 100%;
+	height: 100%;
+
+	perspective: var(--perspective);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: transform var(--transition,300ms);	
+}
+.input_wrap.i_0{
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+}
+.input_wrap.i_1{
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+}
+.input_wrap.i_2{
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+}
+.input{
+	--perspective:  300rem;
+	--transition: 500ms;
+
+	position: relative;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+.input_card{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #ddd;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 4px;
+	perspective: var(--perspective);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transform: rotateY(-180deg);
+	transition: transform var(--transition);
+}
+.input_back{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #ccc radial-gradient(var(--g-1),var(--g-2));
+	border-radius: 4px;
+	transform: rotateY(0);
+	perspective: var(--perspective);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: transform var(--transition);
+}
+.input.active .input_card{
+	transform: rotateY(0);
+}
+.input.active .input_back{
+	transform: rotateY(180deg);
+}
+.input_icon{
+	font-size: 3rem;
+}

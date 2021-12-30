@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Memory Game</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sarojkumar007/m-icons/dist/m-icons-round.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header class="header center">
+		<div class="title center">
+			<div class="t center_v">
+			<i class="m-icon-round">sports_esports</i>
+			<span>Memory Game</span>
+			<span id="lvl"></span>
+			</div>
+		</div>
+	</header>
+	<main class="main">
+		<div class="page center page1 current">
+			<div class="wrapper">
+				<h1 class="heading">Can you remember 'em all?</h1>
+				<p class="text">Choose an easy level to find out.</p>
+				<div class="cta1 center">
+					<div class="cta_wrap">
+						<p>Choose Level : </p>
+						<div class="levelGroup center_v">
+							<input type="radio" name="l" id="l1" value="0" class="level">
+							<label for="l1">
+								<i class="m-icon-round">show_chart</i>
+								<span>Easy</span>
+							</label>
+							<input type="radio" name="l" id="l2" value="1" class="level">
+							<label for="l2">
+								<i class="m-icon-round">trending_up</i>
+								<span>Medium</span>
+							</label>
+							<input type="radio" name="l" id="l3" value="2" class="level">
+							<label for="l3">
+								<i class="m-icon-round">insights</i>
+								<span>Hard</span>
+							</label>
+						</div>
+						<button class="btn startBtn" disabled>
+							<i class="m-icon-round">arrow_circle_right</i>
+							<span>Bring it ON</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="page center page2">
+			<div class="timeBarWrapper">
+				<div class="timeBar"></div>
+			</div>
+			<div class="gameArea">
+				<div class="resultArea center">
+					<h1 class="heading" id="result"></h1>
+					<div class="cta">
+						<button class="btn retryBtn">
+							<i class="m-icon-round">restart_alt</i>
+							<span>Play Again</span>
+						</button>
+					</div>
+				</div>
+				<div class="input_wrap">
+					<!-- .input*12>.input_card[data-i]>i.m-icon-round.input_icon{home} -->
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<script src="main.js"></script>
+</body>
+</html>
