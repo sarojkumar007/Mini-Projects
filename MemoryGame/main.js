@@ -111,13 +111,13 @@ const startGame = type => {
 const endGame = res => {
 	if (res === 'pass') {
 		console.log('You won!!');
-		result.textContent = 'Woohoo!! You Won!';
+		result.innerHTML = 'Woohoo!!<br>You Won!';
 		resultArea.classList.remove('error')
 		resultArea.classList.add('success')
 	}
 	else {
 		console.log('Sorry. You failed.');
-		result.textContent = 'Oops! Time out. Try Again.'
+		result.innerHTML = 'Oops!<br>Time out. Try Again.'
 		resultArea.classList.remove('success')
 		resultArea.classList.add('error')
 	}

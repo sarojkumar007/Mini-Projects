@@ -240,6 +240,7 @@ body{
 	height: 100%;
 	padding: 2rem;
 	border-radius: 6px;
+	text-align: center;
 	perspective: var(--perspective);
 	transform: rotateX(180deg);
 	-webkit-backface-visibility: hidden;
