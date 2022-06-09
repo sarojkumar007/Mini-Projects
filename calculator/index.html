@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="title" content="Simple Calculator">
+  <meta name="og:title" content="Simple Calculator">
+  <meta name="description" content="Simple and Cool Calculator for daily uses">
+  <meta name="og:description" content="Simple and Cool Calculator for daily uses">
+  <title>Simple Calculator</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="body_wrap">
+    <div class="calc_info_backdrop"></div>
+    <div class="calc_info" id="info"></div>
+    <div class="info_content">
+      <h4>Usage</h4>
+      <table>
+        <tbody>
+          <tr>
+            <td><kbd>Num Keys</kbd></td>
+            <td>Input</td>
+          </tr>
+          <tr>
+            <td><kbd>Enter</kbd></td>
+            <td>Evaluate</td>
+          </tr>
+          <tr>
+            <td><kbd>Backspace</kbd> / <kbd>Delete</kbd></td>
+            <td>Delete Input</td>
+          </tr>
+          <tr>
+            <td><kbd>C</kbd></td>
+            <td>Clear All</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="info_btn">
+      <i data-feather="info"></i>
+    </button>
+    <div class="calculator">
+      <h3 class="head">
+        <i class="head_icon" id="head_icon" data-feather="pie-chart"></i>
+        <span>Simple Calculator</span>
+      </h3>
+      <div class="his"></div>
+      <div class="display"></div>
+      <div class="btn_wrap">
+        <button class="val_btn" data-val="(">(</button>
+        <button class="val_btn" data-val=")">)</button>
+        <button class="del_btn" title="Delete">
+          <i data-feather="delete"></i>
+        </button>
+        <button class="ac_btn" title="Clear All">AC</button>
+        <button class="val_btn" data-val="7">7</button>
+        <button class="val_btn" data-val="8">8</button>
+        <button class="val_btn" data-val="9">9</button>
+        <button class="val_btn" data-val="+">+</button>
+        <button class="val_btn" data-val="4">4</button>
+        <button class="val_btn" data-val="5">5</button>
+        <button class="val_btn" data-val="6">6</button>
+        <button class="val_btn" data-val="-">-</button>
+        <button class="val_btn" data-val="1">1</button>
+        <button class="val_btn" data-val="2">2</button>
+        <button class="val_btn" data-val="3">3</button>
+        <button class="val_btn" data-val="*" style="padding: 11px 16px 5px 16px;">&ast;</button>
+        <button class="val_btn" data-val="0">0</button>
+        <button class="val_btn" data-val="." style="font-size: 2rem;padding: 4px 12px;">&middot;</button>
+        <button class="val_btn" data-val="%">%</button>
+        <button class="val_btn" data-val="/">/</button>
+        <button class="eq_btn">=</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="js/feather.min.js"></script>
+  <script>
+    feather.replace();
+    window.addEventListener('load', () => {
+      let head_icons = ['dribbble', 'globe', 'life-buoy', 'pie-chart', 'loader', 'alert-triangle']
+      setInterval(() => {
+        document.getElementById('head_icon').outerHTML = feather.icons[head_icons[Math.floor(Math.random() * head_icons.length)]].toSvg({ class: 'head_icon', id: 'head_icon' })
+      }, 8000);
+    })
+
+    function toggleInfo() {
+      document.querySelector('.calc_info_backdrop').classList.toggle('open');
+      document.querySelector('.calc_info').classList.toggle('open');
+      document.querySelector('.info_content').classList.toggle('open');
+
+      if (document.querySelector('.calc_info').classList.contains('open')) {
+        document.querySelector('.info_btn').innerHTML = feather.icons['x'].toSvg();
+      } else {
+        document.querySelector('.info_btn').innerHTML = feather.icons['info'].toSvg();
+      }
+    }
+
+    document.querySelector('.info_btn').addEventListener('click', () => {
+      toggleInfo();
+    })
+    document.querySelector('.calc_info_backdrop').addEventListener('click', () => {
+      toggleInfo();
+    })
+  </script>
+  <script src="js/main.js" defer></script>
+</body>
+
+</html>

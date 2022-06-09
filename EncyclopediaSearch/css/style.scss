@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 1.5rem;
+  overflow-y: scroll;
+  font-family: "Nunito",sans-serif;
+  font-weight: 600;
+}
+
+.nav{
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  background-color: blueviolet;
+  color: #fff;
+  padding: 0 24px;
+}
+.main{
+  min-height: calc(100vh - 6rem);
+}
+.header-top{
+  height: 24rem;
+  background: url(https://media.istockphoto.com/photos/safari-zoo-animals-over-web-banner-picture-id1023735518?k=20&m=1023735518&s=170667a&w=0&h=rj6wpx4Uw6JN_aRONNFUvpehRpIo_HqDcxQotooH-6Q=) center center;
+  background-size: cover;
+}
+.header-bottom{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-box{
+  padding: 1.6rem;
+  background-color: rgba(255,255,255,.3);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.input{
+  padding: 9px 12px;
+  outline: none;
+  border: 2px solid #999;
+  font-family: inherit;
+  border-radius: 4px;
+  width: 240px;
+  &:focus{
+    border-color: blueviolet;
+  }
+}
+.search-btn{
+  padding: 9px 12px;
+  outline: none;
+  border: 2px solid blueviolet;
+  background-color: blueviolet;
+  color: #fff;
+  font-family: inherit;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+// 
+.search-results{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: blueviolet;
+  margin-top: 1.2rem;
+  min-height: calc(100vh - 38.4rem);
+}
+.card{
+  width: 28rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(180,180,180,.3);
+  margin: 2.4rem;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 2rem;
+
+  &-img{
+    width: 24rem;
+    height: 24rem;
+    border-radius: 4px;
+    overflow: hidden;
+    img{
+      width: 100%;
+      height: inherit;
+      object-fit: cover;
+    }
+  }
+  &-body{
+    h3,p{margin: 1rem 0;}
+    h3{text-align: center;}
+  }
+}
+
+.abs_center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,145 @@
+@keyframes rotate{
+  0%{
+    transform: rotate(360deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+$c-1: #81C784;
+$c-2: #388E3C;
+
+.rotate{
+  animation: rotate 2s linear infinite;
+}
+
+html{
+  font-size: 16px;
+}
+@media screen and (max-width: 764px){
+  html{
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 567px){
+  html{
+    font-size: 11px;
+  }
+}
+
+body{
+  font-family: 'Itim',sans-serif;
+}
+
+main{
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to bottom right, $c-1,$c-2);
+}
+.abs_center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  min-width: 32rem;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  text-align: center;
+
+  h1{
+    margin-bottom: 1rem;
+  }
+  #display{
+    font-size: 5rem;
+  }
+  .btn-group{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .btn{
+      margin: 1rem;
+      outline: none;
+      padding: .3rem .6rem;
+      background-color: #555;
+      color: #fff;
+      border: 2px solid #555;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+
+      i{
+        margin-right: .5rem;
+      }
+
+      &#start{
+        background-color: green;
+        border-color: green;
+      }
+      &#pause{
+        background-color: orange;
+        border-color: orange;
+      }
+      &#timeLap{
+        background-color: #1976D2;
+        border-color: #1976D2;
+      }
+      &#reset{
+        background-color: crimson;
+        border-color: crimson;
+      }
+    }
+  }
+
+  .timeLapse-wrap{
+    margin-top: 1rem;
+    border-top: 4px solid #999;
+    padding: .5rem;
+    list-style: none;
+    display: block;
+    height: 240px;
+    overflow-y: auto;
+    background-color: #dedede;
+    border-radius: 3px;
+
+    .timeLapse{
+      padding: .5rem 1rem;
+      font-size: 1.2rem;
+      background-color: #fff;
+      border-radius: 4px;
+      margin: .5rem;
+      display: flex;
+      align-items: center;
+
+      span{margin-left: .5rem;}
+    }
+  }
+}
+.q-scroll{
+	overflow-y: auto;
+  &::-webkit-scrollbar {
+		width: 4px;
+	}
+	&::-webkit-scrollbar-track {
+		background: transparent; 
+	}
+	&::-webkit-scrollbar-thumb {
+		background: $c-1;
+		border-radius: 8px;
+	}
+	&::-webkit-scrollbar-thumb:hover {
+		background: darken($c-1,10%);
+	}
+}

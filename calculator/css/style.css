@@ -1,0 +1,221 @@
+@keyframes rotate{
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+*,*::before,*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 62.5%;
+}
+body{
+  font-family: 'Poppins',sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.body_wrap{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* for calc_info */
+  position: relative;
+  overflow: hidden;
+}
+.calculator{
+  padding: 1.5rem;
+  background-color: #f7f7f7;
+  border: 2px solid #eee;
+  border-radius: 6px;
+  box-shadow: 2px 4px 8px rgba(180,180,180,.25);
+  max-width: 36rem;
+}
+.head{
+  margin-bottom: 1.2rem;
+  color: #445de8;
+  font-size: 2.4rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+}
+.head_icon{
+  animation: rotate 2s linear infinite;
+  margin-right: 1rem;
+}
+.his{
+  height: 4rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border-top: 2px dashed #eee;
+  padding: 1rem;
+  color: #999;
+  text-align: right;
+}
+.display{
+  min-height: 4.8rem;
+  border: 2px dashed #ccc;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  overflow-y: auto;
+  word-break: break-all;
+}
+.btn_wrap{
+  display: grid;
+  grid-template-columns: repeat(3,6.4rem) 7.2rem;
+  grid-gap: 1.5rem;
+  justify-content: center;
+}
+.btn_wrap button{
+  padding: 8px 16px;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 1.7rem;
+  background-color: #dedede;
+  border: 2px solid #dedede;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 150ms, border-color 150ms, transform 150ms;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn_wrap button:hover{
+  background-color: #d3d3d3;
+  border-color: #d3d3d3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(180,180,180,.25);
+}
+.btn_wrap button:active{
+  background-color: #c9c9c9;
+  border-color: #c9c9c9;
+  transform: translateY(0);
+}
+.del_btn i{
+  background-color: #ccc;
+}
+.del_btn i,.del_btn svg{
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+button.ac_btn{
+  background-color: #f44336;
+  border: 2px solid #f44336;
+  color: #fff;
+  font-size: 2.2rem;
+  padding: 4px 12px;
+}
+button.ac_btn:hover{
+  background-color: #e14034;
+  border-color: #e14034;
+}
+button.ac_btn:active{
+  background-color: #cc3a2f;
+  border-color: #cc3a2f;
+}
+
+button.eq_btn{
+  grid-column: 1/span 4;
+  background-color: #445de8;
+  border: 2px solid #445de8;
+  color: #fff;
+  font-size: 2.2rem;
+  padding: 4px 12px;
+}
+button.eq_btn:hover{
+  background-color: #3f55d4;
+  border-color: #3f55d4;
+}
+button.eq_btn:active{
+  background-color: #1a3aeb;
+  border-color: #1a3aeb;
+}
+
+.calc_info_backdrop{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9;
+  background-color: rgba(230,230,230,.25);
+  display: none;
+}
+.calc_info_backdrop.open{display: block;}
+.calc_info{
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: #445de8;
+  color: #fff;
+  z-index: 10;
+  transition: transform 350ms, opacity 350ms;
+}
+.calc_info.open{
+  transform: scale(25);
+}
+.info_btn{
+  border: none;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background-color: #fff;
+  box-shadow: 2px 4px 8px rgba(180,180,180,.25);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 12;
+  cursor: pointer;
+  
+}
+.info_content{
+  position: fixed;
+  top: 8.5rem;
+  right: 8.5rem;
+  max-width: 24rem;
+  padding: 1.5rem;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 11;
+  transition: all 250ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.info_content h4{
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+.info_content table tr td {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  
+  border-bottom: 1px solid rgba(255,255,255,.3);
+}
+.info_content table tr td kbd{
+  background-color: rgba(255,255,255,.3);
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+.info_content.open{
+  visibility: visible;
+  opacity: 1;
+}

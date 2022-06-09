@@ -1,0 +1,98 @@
+[
+  {
+    "species": "Turtle",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Psammobates_geometricus_1872_white_background.jpg/120px-Psammobates_geometricus_1872_white_background.jpg",
+    "class": "Reptile",
+    "region": "Costa Rica, Mexico"
+  },
+  {
+    "species": "Crocodile",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Description_des_reptiles_nouveaux%2C_ou%2C_Imparfaitement_connus_de_la_collection_du_Mus%C3%A9um_d%27histoire_naturelle_et_remarques_sur_la_classification_et_les_caract%C3%A8res_des_reptiles_%281852%29_%28Crocodylus_moreletii%29.jpg/120px-thumbnail.jpg",
+    "class": "Reptile",
+    "region": "Central Africa"
+  },
+  {
+    "species": "Snake",
+    "image": "https://d2r8r0qhs4bt8m.cloudfront.net/wp-content/uploads/2019/10/18163743/desktop-1425399420.jpg",
+    "class": "Reptile",
+    "region": "Ilha da Queimada Grande, Brazil"
+  },
+  {
+    "species": "Monkey",
+    "image": "https://pbs.twimg.com/media/EcMhOYVXQAIscpK.jpg",
+    "class": "Mammal",
+    "region": "Madagascar, South Africa"
+  },
+  {
+    "species": "Donkey",
+    "image": "https://images.pexels.com/photos/598751/pexels-photo-598751.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "class": "Mammal",
+    "region": "United Arab Emirates (UAE)"
+  },
+  {
+    "species": "Cat",
+    "image": "https://st1.latestly.com/wp-content/uploads/2021/08/31-6-784x441.jpg",
+    "class": "Mammal",
+    "region": "Indian Subcontinent"
+  },
+  {
+    "species": "Dog",
+    "image": "https://1.bp.blogspot.com/-GDa82VGUD0c/YEeQFLukNbI/AAAAAAAAANU/hibZP7m1xpwSqgCAUMXg2CgisKd_GcXfgCLcBGAsYHQ/w1200-h630-p-k-no-nu/IMG-20210309-WA0004.jpg",
+    "class": "Mammal",
+    "region": "USA"
+  },
+  {
+    "species": "Jelly Fish",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT16PSqhKOCF8TmvGLRv_NnfBMYInwuf62Zgg&usqp=CAU",
+    "class": "Scyphozoa",
+    "region": "Australia and South Africa"
+  },
+  {
+    "species": "Shark",
+    "image": "https://www.cnet.com/a/img/7Yq-bUc0L4F_g8XH5BykqKJnauk=/940x0/2021/06/03/beff24d7-ce65-43d0-a34c-e8dcc9278691/gettyimages-590885135222.jpg",
+    "class": "Chondrichthyes",
+    "region": "Florida, USA"
+  },
+  {
+    "species": "Lion",
+    "image": "https://cdn.shopify.com/s/files/1/0074/8254/0102/products/cute-lion-mane-pet-costume-pets-mysilicondreams-lion-king-neck-girth-32cm-721944_1000x.jpg?v=1589976295",
+    "class": "Mammal",
+    "region": "India"
+  },
+  {
+    "species": "Butterfly",
+    "image": "https://cache.desktopnexus.com/thumbseg/911/911043-bigthumbnail.jpg",
+    "class": "Insects",
+    "region": "Mexico"
+  },
+  {
+    "species": "Rat",
+    "image": "https://qph.fs.quoracdn.net/main-qimg-80276cd7a6792e29e80a8ed711802558-c",
+    "class": "Mammal",
+    "region": "Asia and Australia"
+  },
+  {
+    "species": "Peacock",
+    "image": "https://media.gettyimages.com/photos/closeup-of-peacock-with-fanned-out-feathers-picture-id590367297?s=612x612",
+    "class": "Aves",
+    "region": "India and Sri Lanka"
+  },
+  {
+    "species": "Parrot",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRyvIFxD31aCuZTO3wnZfL0p-EXGdlTbKcBA&usqp=CAU",
+    "class": "Aves",
+    "region": "Northern Mexico"
+  },
+  {
+    "species": "Frog",
+    "image": "https://i.pinimg.com/originals/ec/3a/eb/ec3aeb1872983fee996cb0b828b2a3ca.jpg",
+    "class": "Amphibian",
+    "region": "Brazil"
+  },
+  {
+    "species": "House Centipede",
+    "image": "https://gardening.which.co.uk/hc/en-gb/article_attachments/208941725/Centipedes_and_millipedes.jpg",
+    "class": "Centipede",
+    "region": "USA"
+  }
+]

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="JavaScript Stopwatch">
+  <meta name="og:title" content="JavaScript Stopwatch">
+  <meta name="description" content="Handy JavaScript Stopwatch by Saroj Kumar">
+  <meta name="og:description" content="Handy JavaScript Stopwatch by Saroj Kumar">
+  <title>JS Stopwatch</title>
+  <meta name="theme-color" content="#388E3C">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons&family=Material+Icons+Outlined" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="abs_center">
+    <div class="container">
+      <h1>JS Stopwatch</h1>
+      <div id="display">0:00:00:00</div>
+      <div class="btn-group">
+        <button class="btn" id="start">
+          <i class="material-icons rotate">hourglass_bottom</i>
+          Start</button>
+        <button class="btn" id="pause">
+          <i class="material-icons rotate">pause</i>
+          Pause</button>
+        <button class="btn" id="timeLap">
+          <i class="material-icons-outlined rotate">timer</i>
+          Time Lap</button>
+        <button class="btn" id="reset">
+          <i class="material-icons rotate">restart_alt</i>
+          Reset</button>
+      </div>
+      <ul class="timeLapse-wrap q-scroll" id="timeLaps">
+        <!-- <li class="timeLapse">
+          <i class="material-icons-outlined">timer</i>
+          <span>0:12:10:03</span>
+        </li> -->
+      </ul>
+    </div>
+  </main>
+  <script src="main.js"></script>
+</body>
+
+</html>
