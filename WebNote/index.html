@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>WebNote v1.0.0</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sarojkumar007/m-icons/dist/m-icons-round.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+	<div class="top_bar"></div>
+	<header>
+		<h1>Web Note <small>v1.0.0</small></h1>
+		<div class="line_vert">
+			<button type="button" class="btn btn_add tooltip tooltip--left" id="add_note" data-tooltip="Add Note">
+				<i class="m-icon-round">post_add</i>
+			</button>
+			<button style="margin-left: 1rem" type="button" class="btn btn_remove tooltip tooltip--bottom"
+				data-tooltip="Clear" id="clear_note">
+				<i class="m-icon-round">dangerous</i>
+			</button>
+		</div>
+	</header>
+	<main class="note_container">
+		<!-- <div
+        class="note"
+        style="background-image: linear-gradient(to top left, #ff5f6d, #ffc371)"
+        data-note-id="note-564d2c8f5be46"
+      >
+        <div class="note_head">
+          <span class="note_add" role="button">
+            <i class="m-icon-round">add</i>
+          </span>
+          <div class="line_vert">
+            <div class="action dropdown">
+              <span class="note_action lh0">
+                <i class="m-icon-round">more_horiz</i>
+              </span>
+              <div class="dropdown_menu">
+                <span class="dropdown_item">Change Theme</span>
+                <span class="dropdown_item">Date</span>
+              </div>
+            </div>
+            <span class="note_close" role="button">
+              <i class="m-icon-round">close</i>
+            </span>
+          </div>
+        </div>
+        <textarea
+          class="note_content scroll"
+          placeholder="Write Note Here"
+          oninput="updateNote(event)"
+        ></textarea>
+      </div> -->
+	</main>
+	<script src="js/web_note.js"></script>
+</body>
+
+</html>

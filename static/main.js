@@ -88,6 +88,11 @@ const Project_Data = [
     name: 'Word Game',
     tags: ['HTML', 'CSS', 'JS'],
     link: `https://sarojkumar.dev/Mini-Projects/WordGame/`
+  },
+  {
+    name: 'Web Note',
+    tags: ['HTML', 'CSS', 'JS'],
+    link: `https://sarojkumar.dev/Mini-Projects/WebNote/`
   }
 ]
 
