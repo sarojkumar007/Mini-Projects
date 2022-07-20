@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap");
 
 * {
 	padding: 0;
@@ -10,13 +10,13 @@ html {
 	font-size: 62.5%;
 	--c1: 67, 206, 162;
 	--c2: 24, 90, 157;
-	--grad: linear-gradient(45deg, rgb(var(--c1)), rgb(var(--c2)))
+	--grad: linear-gradient(45deg, rgb(var(--c1)), rgb(var(--c2)));
 }
 
 body {
 	font-size: 1.5rem;
 	min-height: 100vh;
-	font-family: 'Poppins', sans;
+	font-family: "Poppins", sans;
 	font-weight: 300;
 	background-color: #fff;
 }
@@ -28,7 +28,7 @@ body {
 
 header {
 	height: 80px;
-	background-color: rgba(var(--c1), .1);
+	background-color: rgba(var(--c1), 0.1);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -53,7 +53,7 @@ small {
 .btn {
 	outline: none;
 	border: none;
-	padding: .5rem;
+	padding: 0.5rem;
 	font-family: inherit;
 	font-size: 1.6rem;
 	display: flex;
@@ -72,9 +72,47 @@ small {
 	color: #fff;
 }
 
-/* main {
-	min-height: calc(100vh - (80px + 4px));
-} */
+/* Modal Button */
+.btn_modal {
+	padding-left: 8px;
+	padding-right: 8px;
+	background-color: rgb(var(--c1));
+	color: #fff;
+	border-radius: 2px;
+	transition: background-color 300ms;
+}
+
+.btn_modal i {
+	font-size: 1.5rem;
+	margin-right: 3px;
+}
+
+.btn_modal span {
+	font-size: 1.2rem;
+}
+
+.btn_select {
+	background-color: rgb(var(--c1));
+}
+
+.btn_select:hover {
+	background-color: rgb(var(--c2));
+}
+
+.btn_cancel {
+	background-color: #ff5f6d;
+}
+
+.btn_cancel:hover {
+	background-color: #ff0016;
+}
+
+/*  */
+main {
+	min-height: calc(100vh - (80px + 4px + 80px));
+	/*Nav,TopBar,Footer*/
+	padding-bottom: 6rem;
+}
 
 .note_container {
 	display: flex;
@@ -83,7 +121,6 @@ small {
 }
 
 .note {
-	width: 100%;
 	margin: 12px;
 	width: 240px;
 	height: 280px;
@@ -101,7 +138,7 @@ small {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background-color: rgba(255, 255, 255, .2);
+	background-color: rgba(255, 255, 255, 0.2);
 }
 
 .note_add,
@@ -111,7 +148,6 @@ small {
 	line-height: 0;
 	color: #fff;
 	cursor: pointer;
-	user-select: none;
 	margin: 0 4px;
 }
 
@@ -132,7 +168,7 @@ small {
 }
 
 .note_content::-webkit-input-placeholder {
-	color: rgba(255, 255, 255, .4);
+	color: rgba(255, 255, 255, 0.4);
 }
 
 /* UTILS */
@@ -154,12 +190,17 @@ small {
 }
 
 .scroll::-webkit-scrollbar-thumb {
-	background: rgba(255, 255, 255, .3);
+	background: rgba(255, 255, 255, 0.3);
 	border-radius: 6px;
 }
 
 .scroll::-webkit-scrollbar-track {
 	background: transparent;
+}
+
+.scroll2::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 6px;
 }
 
 /* Tooltip*/
@@ -279,7 +320,7 @@ small {
 	right: 0;
 	padding: 8px 0;
 	background-color: #fff;
-	box-shadow: 0 3px 6px rgba(10, 10, 10, .2);
+	box-shadow: 0 3px 6px rgba(10, 10, 10, 0.2);
 	border-radius: 3px;
 	z-index: 3;
 	display: flex;
@@ -300,4 +341,196 @@ small {
 
 .dropdown_item:hover {
 	background-color: #f1f1f1;
+}
+
+/* MODAL */
+.modal {
+	position: fixed;
+	z-index: 10;
+}
+
+.modal.active .modal_content {
+	top: 50%;
+	opacity: 1;
+	visibility: visible;
+}
+
+.modal.active .modal_overlay {
+	opacity: 1;
+	visibility: visible;
+}
+
+.modal_overlay {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	backdrop-filter: blur(3px);
+	background-color: rgba(255, 255, 255, 0.2);
+	transition: opacity 200ms;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.modal_content {
+	position: fixed;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+	width: 100%;
+	max-width: 80%;
+	padding: 0;
+	background-color: #fff;
+	border-radius: 0;
+	box-shadow: 0 3px 12px rgba(10, 10, 10, 0.05);
+	transition: top 300ms, opacity 300ms;
+}
+
+.modal_topbar {
+	height: 5px;
+	background-image: var(--grad);
+}
+
+.modal_bottombar {
+	height: 2px;
+	background-image: var(--grad);
+}
+
+.modal_close {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	width: 28px;
+	height: 28px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.modal_close:hover i {
+	color: #ff5f6d;
+}
+
+.modal_close i {
+	transition: color 200ms;
+	font-size: 28px;
+	background-image: var(--grad);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	/* -webkit-text-fill-color: transparent; */
+}
+
+.modal_header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 16px;
+}
+
+.modal_header h3 {
+	font-weight: 500;
+}
+
+.modal_body {
+	padding: 0;
+	margin: 16px;
+	margin-top: calc(16px + 28px);
+	max-height: calc(75vh - 28px - 60px);
+	margin-bottom: 60px;
+	border-top: 2px solid #eee;
+}
+
+.modal_footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 0 16px;
+	height: 60px;
+}
+
+/* --- */
+.theme_wrap {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	/* grid-template-columns: repeat(auto-fit, minmax(80px,14.2857%)); */
+	grid-gap: 8px;
+	justify-content: center;
+	padding: 8px 0;
+}
+
+.theme_item {
+	width: 100%;
+	height: 60px;
+	border: 3px solid #eee;
+	background-color: #f7f7f7;
+	border-radius: 0;
+}
+
+#theme_select input[type="radio"] {
+	display: none;
+}
+
+#theme_select input[type="radio"]:checked+.theme_item {
+	border-color: #ff0016;
+}
+
+/* Footer */
+.footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80px;
+	font-size: 1.2rem;
+}
+
+.footer p {
+	color: #787878;
+	letter-spacing: 1px;
+}
+
+.footer p i {
+	font-size: 2rem;
+	color: #ff0016;
+	margin: 0 6px;
+}
+
+.footer p a {
+	margin: 0 6px;
+	display: inline-block;
+	font-weight: 500;
+	background-image: var(--grad);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	opacity: 0.8;
+}
+
+.footer p a:hover,
+.footer p a:focus {
+	background-image: none;
+	color: rgb(var(--c2));
+	text-decoration: underline wavy;
+}
+
+
+@media only screen and (max-width: 600px) {
+	.theme_wrap {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.theme_wrap {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }

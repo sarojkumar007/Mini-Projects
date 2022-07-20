@@ -1,6 +1,8 @@
 const generateRandomId = () => "note-" + Math.random().toString(16).slice(2);
 // -----------------------------
 const noteWrap = document.querySelector(".note_container");
+const themeWrap = document.querySelector(".theme_wrap");
+const th_form = document.getElementById("theme_select");
 const Themes = [
 	{
 		c1: "#ffafbd",
@@ -130,9 +132,6 @@ function updateNoteUI(n) {
 		myObserver.observe(el);
 	});
 }
-function onNoteResize(e) {
-	console.log(e);
-}
 function addNote() {
 	allNotes.push({
 		noteId: generateRandomId(),
@@ -157,7 +156,6 @@ function updateNote(e) {
 	const text = e.target.value;
 	allNotes[allNotes.findIndex((_n) => _n.noteId === noteId)].noteText = text;
 	saveNotes(allNotes);
-	// updateNote(allNotes);
 }
 document.getElementById("add_note").addEventListener("click", addNote);
 document.getElementById("clear_note").addEventListener("click", () => {
@@ -210,21 +208,69 @@ noteWrap.addEventListener("click", (e) => {
 	}
 	if (e.target.closest(".changeTheme")) {
 		const noteId = e.target.closest(".note").dataset.noteId;
-		console.log(`Clicked Change Theme`, noteId);
+		document.getElementById("theme_noteid").value = noteId;
+		openModal();
 	}
 });
-
 noteWrap.addEventListener("mousedown mouseup", (e) => {
 	console.log(e);
 	if (e.type === "mousedown") {
 		console.log("hold");
 	}
 });
-
+// noteWrap.addEventListener("mousemove", (e) => {
+//   if (e.target.classList.contains("note")) console.log(e.target.classList);
+// });
+// Modal
+const m = document.querySelector(".modal");
+const m_close = document.querySelector(".modal_close");
+const m_overlay = document.querySelector(".modal_overlay");
+function openModal() {
+	document.body.style.overflow = "hidden";
+	m.classList.add("active");
+}
+function closeModal() {
+	th_form.reset();
+	const m_content = m.querySelector(".modal_content");
+	m_content.style.top = "40%";
+	m_content.style.opacity = 0;
+	setTimeout(() => {
+		document.body.style.overflow = null;
+		m.classList.remove("active");
+		m_content.style.top = null;
+		m_content.style.opacity = null;
+	}, 300);
+}
+m_close.addEventListener("click", closeModal);
+m_overlay.addEventListener("click", closeModal);
+//
+document.querySelector(".btn_cancel").addEventListener("click", closeModal);
+th_form.addEventListener("submit", (e) => {
+	e.preventDefault();
+	const fd = new FormData(th_form);
+	const noteId = fd.get("noteID");
+	const themeIndex = fd.get("theme");
+	if (noteId && themeIndex) {
+		allNotes[allNotes.findIndex((_n) => _n.noteId === noteId)].theme =
+			Themes[themeIndex];
+		saveNotes(allNotes);
+		updateNoteUI(allNotes);
+		closeModal();
+	}
+});
 //START
 window.addEventListener("load", () => {
 	const prevData = window.localStorage.getItem("_web_note");
 	allNotes = prevData ? JSON.parse(prevData) : [];
 	updateNoteUI(allNotes);
 	saveNotes(allNotes);
+	// update themeModal
+	t = ``;
+	for (let th in Themes) {
+		t += `<label for="t${th}">
+    <input type="radio" name="theme" id="t${th}" value="${th}" />
+    <div class="theme_item" style="background-image: linear-gradient(to top left,${Themes[th].c1}, ${Themes[th].c2})"></div>
+  </label>`;
+	}
+	themeWrap.innerHTML = t;
 });

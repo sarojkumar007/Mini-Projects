@@ -2,31 +2,31 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>WebNote v1.0.0</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sarojkumar007/m-icons/dist/m-icons-round.min.css" />
-	<link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebNote v1.0.0</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sarojkumar007/m-icons/dist/m-icons-round.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-	<div class="top_bar"></div>
-	<header>
-		<h1>Web Note <small>v1.0.0</small></h1>
-		<div class="line_vert">
-			<button type="button" class="btn btn_add tooltip tooltip--left" id="add_note" data-tooltip="Add Note">
-				<i class="m-icon-round">post_add</i>
-			</button>
-			<button style="margin-left: 1rem" type="button" class="btn btn_remove tooltip tooltip--bottom"
-				data-tooltip="Clear" id="clear_note">
-				<i class="m-icon-round">dangerous</i>
-			</button>
-		</div>
-	</header>
-	<main class="note_container">
-		<!-- <div
+  <div class="top_bar"></div>
+  <header>
+    <h1>Web Note <small>v1.0.0</small></h1>
+    <div class="line_vert">
+      <button type="button" class="btn btn_add tooltip tooltip--left" id="add_note" data-tooltip="Add Note">
+        <i class="m-icon-round">post_add</i>
+      </button>
+      <button style="margin-left: 1rem" type="button" class="btn btn_remove tooltip tooltip--bottom"
+        data-tooltip="Clear" id="clear_note">
+        <i class="m-icon-round">dangerous</i>
+      </button>
+    </div>
+  </header>
+  <main class="note_container">
+    <!-- <div
         class="note"
         style="background-image: linear-gradient(to top left, #ff5f6d, #ffc371)"
         data-note-id="note-564d2c8f5be46"
@@ -56,8 +56,48 @@
           oninput="updateNote(event)"
         ></textarea>
       </div> -->
-	</main>
-	<script src="js/web_note.js"></script>
+  </main>
+  <footer class="footer">
+    <p class="line_vert">
+      Made with <i class="m-icon-round">favorite</i> by
+      <a href="https://sarojkumar.dev/">Saroj Kumar</a>
+    </p>
+  </footer>
+  <div class="modal">
+    <div class="modal_overlay"></div>
+    <div class="modal_content">
+      <div class="modal_topbar"></div>
+      <button class="modal_close" type="button">
+        <i class="m-icon-round">disabled_by_default</i>
+      </button>
+      <div class="modal_header">
+        <h3>Select Theme</h3>
+      </div>
+      <div class="modal_body scroll scroll2">
+        <form action="#!" id="theme_select" autocomplete="off">
+          <input type="text" style="display: none" name="noteID" value="" id="theme_noteid" />
+          <div class="theme_wrap">
+            <!-- <label for="t1">
+                <input type="radio" name="theme" id="t1" value="" />
+                <div class="theme_item"></div>
+              </label> -->
+          </div>
+          <div class="modal_footer line_vert">
+            <button type="submit" class="btn btn_modal btn_select">
+              <i class="m-icon-round">task_alt</i>
+              <span>Select</span>
+            </button>
+            <button type="reset" class="btn btn_modal btn_cancel" style="margin-left: 1rem">
+              <i class="m-icon-round">highlight_off</i>
+              <span>Cancel</span>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="modal_bottombar"></div>
+    </div>
+  </div>
+  <script src="js/web_note.js"></script>
 </body>
 
 </html>
