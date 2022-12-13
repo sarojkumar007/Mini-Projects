@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  font-family: 'Chivo Mono', sans-serif;
+  font-weight: 300;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e3f2fd;
+  padding: 0 10px;
+}
+.wrapper {
+  /* width: 780px; */
+  padding: 35px 40px;
+  background-color: #141414;
+  border-radius: 20px;
+}
+.wrapper header {
+  color: #b2b2b2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper header h2 {
+  font-family: 'Chivo Mono', monospace;
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+.wrapper header .column {
+  display: flex;
+  align-items: center;
+}
+.column label {
+  font-size: 1.19rem;
+  margin-right: 15px;
+  font-weight: 500;
+}
+.volume-slider input {
+  accent-color: #fff;
+  outline: none;
+}
+.keys-checkbox input {
+  outline: none;
+  position: relative;
+  width: 50px;
+  height: 25px;
+  appearance: none;
+  background-color: #4b4b4b;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 300ms;
+}
+.keys-checkbox input:checked {
+  background-color: #8c8c8c;
+}
+.keys-checkbox input::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  height: 15px;
+  width: 15px;
+  background-color: #8c8c8c;
+  border-radius: inherit;
+  transition: left 300ms;
+}
+.keys-checkbox input:checked:before {
+  content: '';
+  left: calc(100% - 20px);
+  background-color: #fff;
+}
+
+.piano-keys {
+  font-family: inherit;
+  display: flex;
+  margin-top: 40px;
+}
+.piano-keys .key {
+  position: relative;
+  list-style-type: none;
+  color: #a2a2a2;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+}
+.piano-keys .key.white {
+  background: linear-gradient(#fff 96%, #eee 4%);
+  border-radius: 8px;
+  color: #141414;
+  width: 70px;
+  height: 230px;
+  border: 1px solid #000;
+}
+.piano-keys .key.white:active,
+.piano-keys .key.white.active {
+  box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+}
+.piano-keys .key.black {
+  width: 44px;
+  height: 140px;
+  background: linear-gradient(#333, #000);
+  border-radius: 0 0 5px 5px;
+  margin: 0 -22px 0 -22px;
+  z-index: 2;
+}
+.piano-keys .key.black:active,
+.piano-keys .key.black.active {
+  box-shadow: inset -5px 5px 10px rgba(255, 255, 255, 0.1);
+  background: linear-gradient(to bottom, #000, #434343);
+}
+
+.piano-keys span {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.12rem;
+  font-weight: 500;
+}
+.piano-keys .key.hide span {
+  display: none;
+}
+
+/**/
+@media screen and (max-width: 815px) {
+  .wrapper {
+    padding: 25px;
+  }
+  header {
+    flex-direction: column;
+  }
+  header :where(h2, .column) {
+    margin-bottom: 13px;
+  }
+  .volume-slider input {
+    max-width: 100px;
+  }
+  .piano-keys {
+    margin-top: 20px;
+  }
+  .piano-keys .key:where(:nth-child(9), :nth-child(10)) {
+    display: none;
+  }
+  .piano-keys .black {
+    height: 100px;
+    width: 40px;
+    margin: 0 -20px 0 -20px;
+  }
+  .piano-keys .white {
+    height: 180px;
+    width: 60px;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .piano-keys
+    .key:where(
+      :nth-child(13),
+      :nth-child(14),
+      :nth-child(15),
+      :nth-child(16),
+      :nth-child(17)
+    ) {
+    display: none;
+  }
+  .piano-keys .white {
+    width: 50px;
+  }
+}
