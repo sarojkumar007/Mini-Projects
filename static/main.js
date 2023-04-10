@@ -104,6 +104,11 @@ const Project_Data = [
     tags: ['HTML', 'CSS', 'JS'],
     link: `ImageEditor/`,
   },
+  {
+    name: 'Timer Count Down',
+    tags: ['HTML', 'CSS', 'JS'],
+    link: `Timer/`,
+  },
 ];
 
 const getTagHTML = (tags) => {
