@@ -1,0 +1,210 @@
+:root {
+  --font1: 'Concert One', cursive;
+  --font2: 'Rubik', sans-serif;
+
+  --c1: #ecf2ff;
+  --c2: #3e54ac;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: var(--font2);
+  font-weight: 300;
+  min-height: 100vh;
+}
+header {
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2.4rem;
+}
+header .app_head {
+  font-family: var(--font1);
+  font-weight: 400;
+  font-size: 3.2rem;
+}
+main {
+  height: calc(100vh - 8rem);
+  padding: 2.4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input_section {
+  max-width: 48rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.form_wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.4rem;
+}
+
+.input_wrap {
+  display: flex;
+  align-items: center;
+  border-radius: 0.8rem;
+  border: 2px solid black;
+}
+.input_wrap span {
+  font-size: 3.2rem;
+  font-weight: 500;
+  padding: 1.6rem 0;
+}
+
+.input_time {
+  width: 7.6rem;
+  padding: 1.6rem;
+  font-family: inherit;
+  font-size: 3.2rem;
+  accent-color: var(--c2);
+  outline: none;
+  border: none;
+  border-radius: 0.8rem;
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.input_btn {
+  margin-left: 1.2rem;
+  background-color: var(--c2);
+  color: #f7f7f7;
+  padding: 1.6rem 2.4rem;
+  font-size: 3.2rem;
+  font-family: inherit;
+  outline: none;
+  border-radius: 0.8rem;
+  border: 2px solid var(--c2);
+  cursor: pointer;
+  transition: background-color 200ms, color 200ms;
+}
+.input_btn:hover,
+.input_btn:focus {
+  background-color: var(--c1);
+  color: var(--c2);
+}
+
+.timer_section {
+  padding: 2.4rem;
+  max-width: 48rem;
+}
+.timer_title {
+  font-size: 2.4rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+}
+.timer_display {
+  display: flex;
+  align-items: baseline;
+}
+.timer_display .num {
+  font-size: 9.6rem;
+  font-weight: 400;
+  color: #343434;
+}
+.timer_display span {
+  font-size: 6.4rem;
+  margin: 0 1.2rem;
+  font-weight: 300;
+  color: #434343;
+}
+.timer_progress {
+  height: 0.8rem;
+  background-color: #ecf2ff;
+  border-radius: 0.4rem;
+}
+.timer_progress_bar {
+  height: inherit;
+  width: 100%;
+  background-color: #3e54ac;
+  border-radius: 0.4rem;
+  animation-fill-mode: forwards;
+}
+
+@keyframes progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.reset_section {
+  padding: 2.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  padding: 1.2rem 2.4rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  background-color: var(--c2);
+  color: #f7f7f7;
+  border: 2px solid var(--c2);
+  border-radius: 0.6rem;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 200ms, color 200ms;
+}
+.btn:hover,
+.btn:focus {
+  background-color: var(--c1);
+  color: var(--c2);
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#timer_title_preview {
+  margin-left: 8px;
+}
+
+.timer_title_wrap {
+  padding: 2.4rem;
+  border: 2px solid var(--c1);
+  border-radius: 0.8rem;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+
+  .input_section .form_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .input_section .input_btn {
+    margin-left: 0;
+    margin-top: 1.2rem;
+  }
+}

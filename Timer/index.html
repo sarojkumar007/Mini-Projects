@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <meta name="title" content="Timer by Saroj Kumar" />
+    <meta
+      name="description"
+      content="A great looking timer that simply does the thing."
+    />
+    <title>Timer</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Concert+One&family=Rubik:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section class="input_section">
+        <header>
+          <h1 class="app_head">|| Timer ||</h1>
+        </header>
+        <div class="form_wrap">
+          <div class="input_wrap">
+            <input
+              type="number"
+              name="input_min"
+              class="input_time"
+              id="input_min"
+              min="0"
+              step="1"
+              max="59"
+              value="00"
+            />
+            <span>:</span>
+            <input
+              type="number"
+              name="input_sec"
+              class="input_time"
+              id="input_sec"
+              min="0"
+              step="1"
+              max="59"
+              value="00"
+            />
+          </div>
+          <button class="input_btn">Start</button>
+        </div>
+        <div class="timer_title_wrap">
+          <h3 class="timer_title">
+            Timer Title : <span id="timer_title_preview">Not Set</span>
+          </h3>
+          <div class="center">
+            <button class="btn add_title_btn">
+              Add Timer Title ( Optional )
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="timer_section hidden">
+        <h3 class="timer_title" id="timer_title"></h3>
+        <div class="timer_display">
+          <span class="num" id="time_min">00</span>
+          <span>m</span>
+          <span class="num" id="time_sec">00</span>
+          <span>s</span>
+        </div>
+        <div class="timer_progress">
+          <div class="timer_progress_bar" id="progress_bar"></div>
+        </div>
+        <div class="reset_section">
+          <button class="btn reset_btn">Reset Counter</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
