@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <meta name="title" content="Local Image Editor by Saroj Kumar" />
+    <meta
+      name="description"
+      content="Edit your local images easily and quickly without any upload."
+    />
+    <title>Local Image Editor by Saroj Kumar</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cookie&family=Rubik:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/sarojkumar007/m-icons/dist/m-icons-round.min.css"
+    />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="disabled">
+      <header><h1 class="app-head">Local Image Editor</h1></header>
+      <div class="wrapper">
+        <section class="filter">
+          <h3 class="filter-head">Filters</h3>
+          <div class="filter-grid">
+            <button class="btn filter-btn active" data-action="1">
+              Brightness
+            </button>
+            <button class="btn filter-btn" data-action="2">Saturation</button>
+            <button class="btn filter-btn" data-action="3">Inversion</button>
+            <button class="btn filter-btn" data-action="4">Grayscale</button>
+          </div>
+          <div class="filter-option">
+            <h3 class="filter-head" id="action-head">Brightness</h3>
+            <span class="option-percent">100%</span>
+            <input
+              type="range"
+              name="option-range"
+              id="option-range-input"
+              class="option-range"
+              min="0"
+              max="200"
+              step="1"
+              value="100"
+            />
+          </div>
+          <div class="edit-option">
+            <h3 class="filter-head">Rotate & Flip</h3>
+            <div class="edit-grid">
+              <button class="edit-btn" title="Rotate Left" data-edit="left">
+                <span class="m-icon-round">rotate_left</span>
+              </button>
+              <button class="edit-btn" title="Rotate Right" data-edit="right">
+                <span class="m-icon-round">rotate_right</span>
+              </button>
+              <button class="edit-btn" title="Flip Horizontal" data-edit="hori">
+                <span class="m-icon-round">flip</span>
+              </button>
+              <button class="edit-btn" title="Flip Vertical" data-edit="vert">
+                <span class="m-icon-round" style="transform: rotate(90deg)"
+                  >flip</span
+                >
+              </button>
+            </div>
+          </div>
+        </section>
+        <section class="preview-img">
+          <img id="image-preview" alt="Preview Image" src="" />
+          <label for="choose-img-input" class="preview-placeholder">
+            <i class="m-icon-round">wallpaper</i>
+            <span>Choose Image</span>
+          </label>
+        </section>
+        <!-- src="https://images.unsplash.com/photo-1620926975779-37500edb6561?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" -->
+      </div>
+      <div class="controls">
+        <button class="btn reset-btn">
+          <span class="m-icon-round">restart_alt</span>
+          <span>Reset Filters</span>
+        </button>
+        <label for="choose-img-input" class="btn choose-btn" role="button">
+          Chooose Image
+        </label>
+        <input
+          type="file"
+          id="choose-img-input"
+          style="display: none"
+          accept="image/*"
+        />
+        <button class="btn save-btn">
+          <span class="m-icon-round">save</span>
+          <span>Save Image</span>
+        </button>
+      </div>
+    </main>
+  </body>
+</html>
