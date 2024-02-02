@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EMI Calculator</title>
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <header class="bg-gray-300 p-4">
+      <h1 class="text-center text-4xl font-semibold">EMI Calculator</h1>
+    </header>
+    <main class="w-full max-w-4xl mx-auto py-2 px-4">
+      <div class="emi_form m-3 p-4 border border-slate-300 rounded-lg">
+        <form
+          action="#!"
+          class="w-full grid grid-cols-1 xl:grid-cols-2 gap-2"
+          method="post"
+          id="emi_form"
+        >
+          <div class="input_group">
+            <label for="principal">Principal</label>
+            <input
+              type="number"
+              name="principal"
+              id="principal"
+              required
+              min="0"
+              max="50000000"
+            />
+          </div>
+          <div class="input_group">
+            <label for="roi">Annual Rate of Interest (in %)</label>
+            <input
+              type="number"
+              name="roi"
+              id="roi"
+              required
+              min="0"
+              step="0.10"
+            />
+          </div>
+          <div class="input_group">
+            <label for="tenure">Tenure (in Months)</label>
+            <input
+              type="number"
+              name="tenure"
+              id="tenure"
+              required
+              min="0"
+              step="1"
+            />
+          </div>
+          <div class="input_group">
+            <label for="start-date">EMI Start Date</label>
+            <input type="date" name="start-date" id="start-date" required />
+          </div>
+          <div class="input_group mt-4 flex gap-2">
+            <button type="submit" class="btn">Calculate</button>
+            <button type="reset" class="btn2">Clear</button>
+          </div>
+        </form>
+      </div>
+      <section class="p-4">
+        <p class="my-2 text-sm">
+          <strong>*Note</strong>: All the values are rounded off to next precise
+          paisa. So, You may see some variations in last remaining amount.
+        </p>
+        <div class="my-2 p-4 border border-slate-300" id="emi_total">
+          <!-- <div class="grid grid-cols-1 md:grid-cols-3">
+            <div>Principal: Rs. 20000</div>
+            <div>Total Amount: Rs. 20000</div>
+            <div>Total Amount: Rs. 20000</div>
+          </div> -->
+        </div>
+        <div class="my-2 p-4 border border-slate-300">
+          <div id="emi_table" class="overflow-x-auto"></div>
+          <!-- <table class="styled_table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Principal</th>
+                <th>Interest</th>
+                <th>EMI</th>
+                <th>Remaining</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>2000</td>
+                <td>200</td>
+                <td>2200</td>
+                <td>4800</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>2000</td>
+                <td>200</td>
+                <td>2200</td>
+                <td>4800</td>
+              </tr>
+            </tbody>
+          </table> -->
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

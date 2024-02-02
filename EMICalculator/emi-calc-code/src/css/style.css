@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  min-height: 100vh;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+/* .input_group {
+  @apply my-4;
+} */
+.input_group label,
+.input_group input {
+  display: block;
+  width: 100%;
+}
+.input_group label {
+  @apply mb-2 font-semibold text-xl;
+}
+
+.input_group input {
+  @apply p-2 border-2 border-slate-400 rounded;
+}
+
+.btn {
+  @apply bg-blue-600 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-blue-50 text-white font-semibold h-12 px-6 rounded-lg w-full flex items-center justify-center sm:w-auto;
+}
+.btn2 {
+  @apply border-2 border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 text-black font-semibold h-12 px-6 rounded-lg w-full flex items-center justify-center sm:w-auto;
+}
+
+/* TABLE */
+.styled_table {
+  @apply overflow-hidden rounded-md border-collapse table-auto w-full text-sm;
+}
+.styled_table thead th,
+.styled_table tbody td {
+  @apply p-3 text-center;
+}
+.styled_table thead tr th {
+  @apply border-b border-b-slate-400 bg-slate-500 text-white;
+}
+.styled_table tbody tr:nth-child(even) {
+  @apply bg-slate-100;
+}
