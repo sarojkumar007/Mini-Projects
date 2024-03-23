@@ -7,10 +7,11 @@ import {
 } from "./utils";
 
 function initApp(): void {
-  (document.querySelector("#start-date") as HTMLInputElement).min = formatDate(
-    new Date(),
-    false
-  );
+  // START from Today
+  // (document.querySelector("#start-date") as HTMLInputElement).min = formatDate(
+  //   new Date(),
+  //   false
+  // );
 
   (document.querySelector("#emi_form") as HTMLFormElement).addEventListener(
     "submit",
